@@ -1,0 +1,37 @@
+LCM And GCD
+Easy (GFG)
+
+Given two numbers A and B. The task is to find out their LCM and GCD.
+
+ 
+
+Example 1:
+
+Input:
+A = 5 , B = 10
+Output:
+10 5
+Explanation:
+LCM of 5 and 10 is 10, while
+thier GCD is 5.
+
+long long gcd(long long a , long long b)
+    {
+        if(b == 0)
+            return a;
+        return gcd(b, a%b);
+    }
+  
+  
+    vector<long long> lcmAndGcd(long long A , long long B) {
+        
+        vector<long long> v(2);
+        
+        long long g = gcd(A,B);   
+        long long l = (A*B)/g;    
+        
+        v[0] = l;
+        v[1] = g;
+        
+        return v;
+    }
