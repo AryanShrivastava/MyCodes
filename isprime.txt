@@ -1,6 +1,7 @@
 Check for prime number
 Easy (gfg)
 
+
 bool isprime(int n)
 {
     if(n==1)
