@@ -1,0 +1,40 @@
+Largest prime factor 
+Medium (GfG)
+
+Given a number N, the task is to find the largest prime factor of that number.
+ 
+
+Example 1:
+
+Input:
+N = 5
+Output:
+5
+Explanation:
+5 has 1 prime factor 
+i.e 5 only.
+
+class Solution{
+public: 
+    long long int largestPrimeFactor(int N){
+        // code here
+        int n = N;
+        long long a = 0;
+        if(n<=1)
+            return 0;
+        for(int i=2;i*i<=N;i++)
+        {
+            
+            while(n%i == 0)
+            {
+                if(a < i)
+                    a = i;
+                n = n/i;
+            }
+        }
+        if(n>1 && n > a)
+            return n;
+        else
+            return a;
+    }
+};
