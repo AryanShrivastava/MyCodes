@@ -22,3 +22,11 @@ long long int factorial(int N){
        }
        return res;
 }
+
+Method 2
+
+long long int factorial(int N){
+    if(n==0)
+        return 1;
+    return n*fact(n-1);
+}
