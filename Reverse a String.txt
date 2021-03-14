@@ -1,0 +1,27 @@
+Reverse a String
+Easy (GfG)
+You are given a string s. You need to reverse the string.
+
+Example 1:
+
+Input:
+s = Geeks
+Output: skeeG
+
+string reverseWord(string str){
+    
+    int n = str.length();
+    int start =0;
+    int end = n-1;
+    string temp;
+    while(start < end)
+    {
+        temp[0] = str[end];
+        str[end] = str[start];
+        str[start] = temp[0];
+        start++;
+        end--;
+    }
+    return str;
+  //Your code here
+}
