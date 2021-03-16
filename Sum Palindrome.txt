@@ -1,0 +1,49 @@
+Sum Palindrome
+Very basic (GfG)
+
+Given a number, reverse it and add it to itself unless it becomes a palindrome or number of iterations becomes more than 5.
+
+Example 1:
+
+Input: n = 23
+Output: 55 
+Explanation: reverse(23) = 32,then 32+23
+= 55 which is a palindrome. 
+
+class Solution {
+  public:
+  
+  long long reverse(long long n)
+  {
+      long long x = n;
+      int res = 0;
+      while(x>0)
+            {
+            int ld = x % 10;
+            res = res * 10 + ld;
+            x = x / 10;
+            }
+            
+            return res;
+  }
+  
+    long long isSumPalindrome(long long n){
+        // code here
+        
+       // long long sum = 0;
+        int count = 0;
+        while(n != reverse(n) && count <5 )
+        {
+            int k = reverse(n);
+            n = n + k;
+            
+            count++;
+        }
+        
+        if(n == reverse(n))
+            return n;
+        else
+            return -1;
+        
+    }
+};
