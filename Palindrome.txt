@@ -1,0 +1,30 @@
+Palindrome
+very basic (GfG)
+
+Given an integer, check whether it is a palindrome or not.
+
+Example 1:
+
+Input: n = 55555
+Output: Yes
+
+class Solution
+{
+	public:
+		string is_palindrome(int n)
+		{
+		    int x = n;
+		    int res = 0;
+		    while(x>0)
+		    {
+		        int ld = x%10;
+		        res = res * 10 + ld;
+		        x = x / 10;
+		    }
+		    
+		    if(n == res)
+		        return "Yes";
+		    else
+		        return "No";
+		}
+};
