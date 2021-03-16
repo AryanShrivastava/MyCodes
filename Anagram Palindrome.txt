@@ -1,0 +1,53 @@
+Anagram Palindrome
+Easy (GfG)
+
+Given a string S, Check if characters of the given string can be rearranged to form a palindrome. 
+For example characters of “geeksogeeks” can be rearranged to form a palindrome “geeksoskeeg”, 
+but characters of “geeksforgeeks” cannot be rearranged to form a palindrome.
+
+Input:
+2
+geeksogeeks
+geeksforgeeks
+Output:
+Yes
+No
+
+#include <iostream>
+using namespace std;
+
+string anagram(string str)
+{
+    int arr[256] = {0};
+    int odd =0;
+    for(int i=0 ;i<str.length();i++)
+    {
+        arr[str[i]]++;
+    }
+    
+    for(int i=0 ;i<256;i++)
+    {
+        if(arr[i] & 1)
+            odd++;
+            
+        if(odd > 1)
+            return "false";
+    }
+    return "true";
+}
+
+int main() {
+	int T;
+	cin>>T;
+	string str;
+	for(int i =0 ; i<T ;i++)
+	{
+	    cin>>str;
+	    if(anagram(str) == "true")
+	        cout<<"Yes"<<endl;
+	    else
+	        cout<<"No"<<endl;
+	}
+	
+	return 0;
+}
