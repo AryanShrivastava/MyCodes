@@ -1,0 +1,53 @@
+Find the Sum of Last N nodes of the Linked List
+Basic (GfG)
+
+Given a single linked list of size M, 
+your task is to complete the function sumOfLastN_Nodes(), 
+which should return the sum of last N nodes of the linked list.
+
+Example:
+Input:
+2
+6 3
+5 9 6 3 4 10
+2 2
+1 2
+
+Output:
+17
+3
+
+Explanation:
+Testcase 1: Sum of last three nodes in the linked list is 3 + 4 + 10 = 17.
+
+int sumOfLastN_Nodes(struct Node* head, int n)
+{
+      
+      
+    Node *curr = head;
+      
+    Node *prev = NULL;
+      
+    while(curr != NULL)
+    {
+        Node *node = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = node;
+          
+    }
+    
+    curr = prev;
+      
+      int sum = 0;
+      
+      
+    while(curr != NULL && n--)
+    {
+          sum += curr->data;
+          curr = curr->next;
+          
+    }
+      
+      return sum;
+}
