@@ -1,0 +1,56 @@
+Count Pairs whose sum is equal to X
+Easy (GfG)
+
+Given two linked list of size N1 and N2 respectively of distinct elements, your task is to complete the function countPairs(), which returns the count of all pairs from both lists whose sum is equal to the given value X.
+Note: The 2 numbers of a pair should be parts of different lists.
+
+Example 1:
+
+Input:
+L1 = 1->2->3->4->5->6
+L2 = 11->12->13
+X = 15
+Output: 3
+Explanation: There are 3 pairs that
+add up to 15 : (4,11) , (3,12) and (2,13)
+
+/*
+Structure of the node of the linked list is as
+struct Node
+{
+    int data;
+    struct Node* next;
+
+    Node(int x){
+        data = x;
+        next = NULL;
+    }
+};
+*/
+// your task is to complete this function
+int countPairs(struct Node* head1, struct Node* head2, int x) {
+    // Code here
+    unordered_set<int> s;
+    
+    while(head1 != NULL)
+    {
+        
+        s.insert(head1->data);
+        head1 = head1->next;
+    }
+    
+    int count=0;
+    
+    while(head2 != NULL)
+    {
+        int y = x - head2->data;
+        if (s.find(y) != s.end())
+            count++;
+        
+        head2 = head2->next;
+        
+    }
+
+    return count;
+    
+}
