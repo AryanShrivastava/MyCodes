@@ -1,0 +1,99 @@
+Concatenating Two Linked Lists
+Easy (HackerRank)
+
+You will be implementing functions to concatenate two linked lists.
+
+/* 
+ * This function returns the head pointer to a linked list that is the result of
+ * appending the larger linked list at the end of the smaller linked list.
+ * A linked list is larger that the other if it has more elements.
+ * If both linked lists have same size then append list with node2
+ * at the end of the list with node1
+ */
+
+    Sample Input 0
+
+3
+1
+2
+3
+2
+4
+5
+Sample Output 0
+
+4
+5
+1
+2
+3
+
+/*
+For your reference:
+LinkedListNode {
+    int val;
+    LinkedListNode *next;
+};
+*/
+
+int count(LinkedListNode* head)
+{
+    int elements = 0;
+    while(head != NULL)
+    {
+        elements++;
+        head = head->next;
+        
+    }
+    return elements;
+}
+
+LinkedListNode* concat(LinkedListNode* node1, LinkedListNode* node2) {
+    // Write your code here.
+    
+    int count1 = count(node1);
+    int count2 = count(node2);
+    
+    if (node1==NULL)
+        return(node2);
+    if (node2==NULL)
+        return(node1);
+    
+    if(count1 > count2)
+    {
+        LinkedListNode *curr = node2;
+        while(curr->next != NULL)
+        {
+            curr = curr->next;   
+        }
+        
+        curr->next = node1;
+        
+        return node2;
+    }
+    else if(count1 == count2)
+    {
+     LinkedListNode *curr = node1;
+        while(curr->next != NULL)
+        {
+            curr = curr->next;   
+        }
+        
+        curr->next = node2;
+        
+        return node1;   
+    }
+    else{
+        LinkedListNode *curr = node1;
+        while(curr->next != NULL)
+        {
+            curr = curr->next;   
+        }
+        
+        curr->next = node2;
+        
+        return node1;  
+    }
+  
+
+}
