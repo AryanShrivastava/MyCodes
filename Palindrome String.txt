@@ -1,0 +1,37 @@
+Palindrome String
+Easy (GfG)
+
+Given a string S, check if it is palindrome or not.
+
+Example 1:
+
+Input: S = "abba"
+Output: 1
+Explanation: S is a palindrome
+
+class Solution{
+public:	
+	
+	
+	int isPlaindrome(string S)
+	{
+	    // Your code goes here
+	    int start = 0;
+	    int end = S.size()-1;
+	    
+	    while(start < end)
+	    {
+	        if(S[start] == S[end])
+	        {
+	            start++;
+	            end--;
+	        }
+	        else
+	            return 0;
+	        
+	    }
+	    return 1;
+	    
+	}
+
+};
