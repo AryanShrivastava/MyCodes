@@ -1,0 +1,37 @@
+Merge and Sort 
+Basic (GfG)
+
+Given two arrays of length N and M, print the merged array in ascending order containing only unique elements.
+
+Example 1:
+
+Input:
+N = 2
+a[] = {1, 8}
+M = 2
+b[] = {10, 11}
+Output:
+answer[] = {1, 8, 10, 11}
+
+int mergeNsort(int a[], int b[], int n, int m, int answer[])
+{
+    // Write your code here
+    int hash[100005]={0};
+    int k=0;
+    
+    for(int i=0;i<n;i++)
+    hash[a[i]]++;
+    
+    for(int i=0;i<m;i++)
+    hash[b[i]]++;
+    
+    for(int i=1;i<100001;i++)
+    if(hash[i])
+    {
+        answer[k]=i;
+        k++;
+    }
+    
+    return k;
+    
+}
