@@ -1,0 +1,25 @@
+Party of Couples
+Very Basic (GfG)
+
+In a party of N people, each person is denoted by an integer. Couples are represented by the same number. Find out the only singe person in the party of couples.
+
+
+Example 1:
+
+Input: N = 5
+arr = {1, 2, 3, 2, 1}
+Output: 3
+Explaination: Only the number 3 is single.
+
+class Solution{
+    public:
+    int findSingle(int N, int arr[]){
+        // code here
+        int num = 0;
+        for(int i = 0 ; i<N;i++)
+        {
+            num = num ^ arr[i];
+        }
+        return num;
+    }
+};
