@@ -1,0 +1,28 @@
+Maximum money 
+very basic (GfG)
+
+Given a street of N houses (a row of houses), each house having K amount of money kept inside; now there is a thief who is going to steal this money but he has a constraint/rule that he cannot steal/rob two adjacent houses. Find the maximum money he can rob.
+
+Example 1:
+
+Input:
+N = 5 , K = 10
+Output:
+30
+Explanation:
+The Robber can rob from the first, third
+and fifth houses which will result in 30.
+
+class Solution {
+  public:
+    int maximizeMoney(int N , int K) {
+        // code here
+        int sum =0;
+        
+            for(int i=0 ;i< N; i = i+2)
+            {
+                sum = sum + K;
+            }
+    return sum;
+    }
+};
