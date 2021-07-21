@@ -12,7 +12,6 @@ Output: 457
 Took refrence of solution
 
 /* 
-
 struct Node
 {
     int data;
@@ -23,7 +22,6 @@ struct Node
         next = NULL;
     }
 };
-
 */
 
 class Solution
